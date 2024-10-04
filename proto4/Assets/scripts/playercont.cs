@@ -12,8 +12,8 @@ public class playercont : MonoBehaviour
     //comps
     public Rigidbody RB;
     public CanvasGroup cg;
-    public AudioSource AS;
-    public AudioClip AC;
+    //public AudioSource AS;
+    //public AudioClip AC;
     //floats
     public float MouseSensitivity = 2;
     public float WalkSpeed = 10;
@@ -26,13 +26,15 @@ public class playercont : MonoBehaviour
     public Camera Eyes;
     public Vector3 camPos;
     public Vector3 restPosition;
-    public List<GameObject> gameobs;
+    //bools
     public bool moving;
+    public bool inshop=false;
     
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        storemanager.God.PC = this;
     }
     
     void Update()
@@ -60,48 +62,40 @@ public class playercont : MonoBehaviour
                 camPos = newPosition;
             }
 
-            if (Input.GetKeyDown(KeyCode.W) && moving == false || Input.GetKeyDown(KeyCode.A) && moving == false || Input.GetKeyDown(KeyCode.S) && moving == false ||
-                Input.GetKeyDown(KeyCode.D) && moving == false)
+            if (inshop==false)
             {
-                AS.PlayOneShot(AC);
-                moving = true;
-            }
-            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
-                Input.GetKeyUp(KeyCode.D))
-            {
-                AS.Stop();
-                moving = false;
-            }
-            Eyes.transform.localPosition = camPos;
-            if (timer > Mathf.PI * 2) //completed a full cycle on the unit circle. Reset to 0 to avoid bloated values.
-            {
-                timer = 0;
-                AS.PlayOneShot(AC);
-            }
-            //get mousexy
-            float xRot = Input.GetAxis("Mouse X") * MouseSensitivity;
-            float yRot = -Input.GetAxis("Mouse Y") * MouseSensitivity;
-            //horrot
-            transform.Rotate(0, xRot, 0);
-            //get rot
-            Vector3 Prot = Eyes.transform.localRotation.eulerAngles;
-            //add change to rot
-            Prot.x += yRot;
-            //if's
-            if (Prot.x < -180)
-            {
-                Prot.x += 360;
-            }
+                Eyes.transform.localPosition = camPos;
+                if (timer > Mathf.PI *
+                    2) //completed a full cycle on the unit circle. Reset to 0 to avoid bloated values.
+                {
+                    timer = 0;
+                }
 
-            if (Prot.x > 180)
-            {
-                Prot.x -= 360;
-            }
+                //get mousexy
+                float xRot = Input.GetAxis("Mouse X") * MouseSensitivity;
+                float yRot = -Input.GetAxis("Mouse Y") * MouseSensitivity;
+                //horrot
+                transform.Rotate(0, xRot, 0);
+                //get rot
+                Vector3 Prot = Eyes.transform.localRotation.eulerAngles;
+                //add change to rot
+                Prot.x += yRot;
+                //if's
+                if (Prot.x < -180)
+                {
+                    Prot.x += 360;
+                }
 
-            //clamp minmax
-            Prot = new Vector3(Mathf.Clamp(Prot.x, -65, 40), 0, 0);
-            //plug back in
-            Eyes.transform.localRotation = Quaternion.Euler(Prot);
+                if (Prot.x > 180)
+                {
+                    Prot.x -= 360;
+                }
+
+                //clamp minmax
+                Prot = new Vector3(Mathf.Clamp(Prot.x, -65, 40), 0, 0);
+                //plug back in
+                Eyes.transform.localRotation = Quaternion.Euler(Prot);
+            }
 
             if (WalkSpeed > 0)
             {
@@ -123,22 +117,20 @@ public class playercont : MonoBehaviour
                 move = move.normalized * WalkSpeed;
                 //plug back in
                 move = new Vector3(move.x, RB.velocity.y, move.z);
-                RB.velocity = move;
+                RB.velocity = move+storemanager.God.BM.RB.velocity;
             }
+    }
 
-            foreach (GameObject G in gameobs)
-            {
-                if (Vector3.Distance(G.transform.position, transform.position)<25)
-                {
-                    float e = Mathf.Abs(Vector3.Distance(G.transform.position, transform.position));
-                    float s = Mathf.InverseLerp(50, 20, e);
-                    cg.alpha = s;
-                }
-            }
-
-            if (cg.alpha >= 1f)
-            {
-                SceneManager.LoadScene("Scenes/SampleScene");
-            }
+    public void unlock()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        inshop = true;
+    }
+    public void relock()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        inshop = false;
     }
 }
