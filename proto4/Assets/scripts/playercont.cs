@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -26,9 +27,16 @@ public class playercont : MonoBehaviour
     public Camera Eyes;
     public Vector3 camPos;
     public Vector3 restPosition;
+    public GameObject helmpos;
+    public GameObject sailpos,sailpos2;
+    public GameObject helm, sail;
     //bools
     public bool moving;
     public bool inshop=false;
+    public bool onhelm = false;
+    public bool onsail = false;
+    public bool onsail2 = false;
+    public bool cooled = true;
     
     void Awake()
     {
@@ -36,9 +44,11 @@ public class playercont : MonoBehaviour
         Cursor.visible = false;
         storemanager.God.PC = this;
     }
-    
+
     void Update()
     {
+        if (onhelm == false && onsail == false && onsail2 == false)
+        {
             //movement
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
                 Input.GetKey(KeyCode.D)) //moving
@@ -61,64 +71,123 @@ public class playercont : MonoBehaviour
                         transitionSpeed * Time.deltaTime)); //transition smoothly from walking to stopping.
                 camPos = newPosition;
             }
+        }
 
-            if (inshop==false)
+        if (inshop == false)
+        {
+            Eyes.transform.localPosition = camPos;
+            if (timer > Mathf.PI *
+                2) //completed a full cycle on the unit circle. Reset to 0 to avoid bloated values.
             {
-                Eyes.transform.localPosition = camPos;
-                if (timer > Mathf.PI *
-                    2) //completed a full cycle on the unit circle. Reset to 0 to avoid bloated values.
-                {
-                    timer = 0;
-                }
-
-                //get mousexy
-                float xRot = Input.GetAxis("Mouse X") * MouseSensitivity;
-                float yRot = -Input.GetAxis("Mouse Y") * MouseSensitivity;
-                //horrot
-                transform.Rotate(0, xRot, 0);
-                //get rot
-                Vector3 Prot = Eyes.transform.localRotation.eulerAngles;
-                //add change to rot
-                Prot.x += yRot;
-                //if's
-                if (Prot.x < -180)
-                {
-                    Prot.x += 360;
-                }
-
-                if (Prot.x > 180)
-                {
-                    Prot.x -= 360;
-                }
-
-                //clamp minmax
-                Prot = new Vector3(Mathf.Clamp(Prot.x, -65, 40), 0, 0);
-                //plug back in
-                Eyes.transform.localRotation = Quaternion.Euler(Prot);
+                timer = 0;
             }
 
-            if (WalkSpeed > 0)
+            //get mousexy
+            float xRot = Input.GetAxis("Mouse X") * MouseSensitivity;
+            float yRot = -Input.GetAxis("Mouse Y") * MouseSensitivity;
+            //horrot
+            transform.Rotate(0, xRot, 0);
+            //get rot
+            Vector3 Prot = Eyes.transform.localRotation.eulerAngles;
+            //add change to rot
+            Prot.x += yRot;
+            //if's
+            if (Prot.x < -180)
             {
-                //set 0
-                Vector3 move = Vector3.zero;
-                //fore
-                if (Input.GetKey(KeyCode.W))
-                    move += transform.forward;
-                //aft
-                if (Input.GetKey(KeyCode.S))
-                    move -= transform.forward;
-                //left
-                if (Input.GetKey(KeyCode.A))
-                    move -= transform.right;
-                //right
-                if (Input.GetKey(KeyCode.D))
-                    move += transform.right;
-                //setspeed
-                move = move.normalized * WalkSpeed;
-                //plug back in
-                move = new Vector3(move.x, RB.velocity.y, move.z);
-                RB.velocity = move+storemanager.God.BM.RB.velocity;
+                Prot.x += 360;
             }
+
+            if (Prot.x > 180)
+            {
+                Prot.x -= 360;
+            }
+
+            //clamp minmax
+            Prot = new Vector3(Mathf.Clamp(Prot.x, -65, 40), 0, 0);
+            //plug back in
+            Eyes.transform.localRotation = Quaternion.Euler(Prot);
+        }
+
+        if (WalkSpeed > 0 && onhelm == false && onsail == false && onsail2 == false)
+        {
+            //set 0
+            Vector3 move = Vector3.zero;
+            //fore
+            if (Input.GetKey(KeyCode.W))
+                move += transform.forward;
+            //aft
+            if (Input.GetKey(KeyCode.S))
+                move -= transform.forward;
+            //left
+            if (Input.GetKey(KeyCode.A))
+                move -= transform.right;
+            //right
+            if (Input.GetKey(KeyCode.D))
+                move += transform.right;
+            //setspeed
+            move = move.normalized * WalkSpeed;
+            //plug back in
+            move = new Vector3(move.x, RB.velocity.y, move.z);
+            RB.velocity = move + storemanager.God.BM.RB.velocity;
+        }
+
+        if (onhelm==true)
+        {
+            transform.position = helmpos.transform.position;
+            if (Input.GetKeyDown(KeyCode.E)&& cooled)
+            {
+                onhelm = false;
+                cooled = false;
+                StartCoroutine(cd());
+            }
+        }
+        else if (Vector3.Distance(transform.position, helmpos.transform.position) < 0.5f && cooled)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                onhelm = true;
+                cooled = false;
+                StartCoroutine(cd());
+            }
+        }
+        if (onsail==true)
+        {
+            transform.position = sailpos.transform.position;
+            if (Input.GetKeyDown(KeyCode.E)&& cooled)
+            {
+                onsail = false;
+                cooled = false;
+                StartCoroutine(cd());
+            }
+        }
+        else if (Vector3.Distance(sailpos.transform.position, transform.position) < 0.5f && cooled)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                onsail = true;
+                cooled = false;
+                StartCoroutine(cd());
+            }
+        }
+        if (onsail2==true)
+        {
+            transform.position = sailpos2.transform.position;
+            if (Input.GetKeyDown(KeyCode.E)&& cooled)
+            {
+                onsail2 = false;
+                cooled = false;
+                StartCoroutine(cd());
+            }
+        }
+        else if (Vector3.Distance(sailpos2.transform.position, transform.position) < 0.5f && cooled)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                onsail2 = true;
+                cooled = false;
+                StartCoroutine(cd());
+            }
+        }
     }
 
     public void unlock()
@@ -132,5 +201,10 @@ public class playercont : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         inshop = false;
+    }
+    public IEnumerator cd()
+    {
+        yield return new WaitForSeconds(5);
+        cooled = true;
     }
 }

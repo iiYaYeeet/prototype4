@@ -48,6 +48,7 @@
      <Compile Include="Assets\scripts\playercont.cs" />
      <Compile Include="Assets\scripts\storemanager.cs" />
      <Compile Include="Assets\scripts\boatcontroller.cs" />
+     <Compile Include="Assets\scripts\ropecontroller.cs" />
      <Compile Include="Assets\charachter\billboard.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\materials\hardwood-brown-planks-unity\Materials" />
