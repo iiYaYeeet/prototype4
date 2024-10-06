@@ -29,13 +29,14 @@ public class playercont : MonoBehaviour
     public Vector3 restPosition;
     public GameObject helmpos;
     public GameObject sailpos,sailpos2;
-    public GameObject helm, sail;
+    public GameObject helm, sail, anchor;
     //bools
     public bool moving;
     public bool inshop=false;
     public bool onhelm = false;
     public bool onsail = false;
     public bool onsail2 = false;
+    public bool anchordown = false;
     public bool cooled = true;
     
     void Awake()
@@ -188,6 +189,39 @@ public class playercont : MonoBehaviour
                 StartCoroutine(cd());
             }
         }
+        if (anchordown==false)
+        {
+            if ( Vector3.Distance(transform.position, anchor.transform.position) < 1f &&Input.GetKeyDown(KeyCode.E) && cooled)
+            {
+                cooled = false;
+                StartCoroutine(cd());
+                StartCoroutine(storemanager.God.BM.dropanchor());
+                anchordown = true;
+            }
+        }
+        else if (Vector3.Distance(transform.position, anchor.transform.position) < 1f && cooled)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                cooled = false;
+                StartCoroutine(cd());
+                StartCoroutine(storemanager.God.BM.raiseanchor());
+                anchordown = false;
+            }
+        }
+
+        if (Vector3.Distance(transform.position, anchor.transform.position) < 1f
+            || Vector3.Distance(sailpos2.transform.position, transform.position) < 0.5f 
+            || Vector3.Distance(sailpos.transform.position, transform.position) < 0.5f 
+            || Vector3.Distance(helmpos.transform.position, transform.position) < 0.5f 
+            && onsail==false && onsail2==false && onhelm==false)
+        {
+            cg.alpha = 1;
+        }
+        else
+        {
+            cg.alpha = 0;
+        }
     }
 
     public void unlock()
@@ -204,7 +238,7 @@ public class playercont : MonoBehaviour
     }
     public IEnumerator cd()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         cooled = true;
     }
 }

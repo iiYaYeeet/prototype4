@@ -45,6 +45,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\rockcontroller.cs" />
      <Compile Include="Assets\scripts\playercont.cs" />
      <Compile Include="Assets\scripts\storemanager.cs" />
      <Compile Include="Assets\scripts\boatcontroller.cs" />
@@ -79,6 +80,7 @@
      <Folder Include="Assets\materials\saloon-wood-floor-unity\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\materials\saloon-wood-floor-unity" />
+     <Folder Include="Assets\materials\fabrics_0066_1k_rbjytj" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Mini Nature Pack\Terrain" />
      <Folder Include="Assets\scripts" />
@@ -107,6 +109,7 @@
      <Folder Include="Assets\Mini Nature Pack\Models\Tree 10_Textures" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\Mini Nature Pack\Models\Tree 8_Textures" />
+     <Folder Include="Assets\materials\spotted-rust-unity\Materials" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Tree_Textures" />
      <Folder Include="Assets\materials\oak-wood-bare-unity" />

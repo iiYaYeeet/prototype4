@@ -40,7 +40,7 @@ public class storemanager : MonoBehaviour
                 closeststore = s;
             }
         }
-        if (Vector3.Distance(closeststore.transform.position, God.PC.transform.position) < 4 && storeuiopen==false)
+        if (Vector3.Distance(closeststore.transform.position, God.PC.transform.position) < 8 && storeuiopen==false)
         {
             openstoretext.alpha = 1;
             openable=true;
@@ -48,6 +48,7 @@ public class storemanager : MonoBehaviour
         else
         {
             openstoretext.alpha = 0;
+            openable = false;
         }
 
         if (openable && Input.GetKeyDown(KeyCode.E) && cooled)

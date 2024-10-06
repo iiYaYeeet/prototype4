@@ -341,6 +341,7 @@
 "Assets/charachter/billboard.cs"
 "Assets/scripts/boatcontroller.cs"
 "Assets/scripts/playercont.cs"
+"Assets/scripts/rockcontroller.cs"
 "Assets/scripts/ropecontroller.cs"
 "Assets/scripts/storemanager.cs"
 -langversion:9.0
