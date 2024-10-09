@@ -51,7 +51,7 @@ public class storemanager : MonoBehaviour
             openable = false;
         }
 
-        if (openable && Input.GetKeyDown(KeyCode.E) && cooled)
+        if (openable && Input.GetKeyDown(KeyCode.R) && cooled)
         {
             sellp = Mathf.Round(Random.Range(sellboundh, sellboundl) * 100f) / 100f;
             buyp = Mathf.Round(Random.Range(buyboundl, buyboundh) * 100f) / 100f;
@@ -63,7 +63,7 @@ public class storemanager : MonoBehaviour
             God.PC.unlock();
             StartCoroutine(cd());
         }
-        if (storeuiopen && Input.GetKeyDown(KeyCode.E) && cooled)
+        if (storeuiopen && Input.GetKeyDown(KeyCode.R) && cooled)
         {
             openable = true;
             storeuiopen = false;

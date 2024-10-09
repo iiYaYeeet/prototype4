@@ -20,18 +20,18 @@ extern void boatcontroller_Update_mB78196BDA7730ECF1E5ACBD3ED1C1438EF0B890D (voi
 extern void boatcontroller_dropanchor_mA6C8B8257C08F1411D3BE8C08290CCF242EB99C2 (void);
 extern void boatcontroller_raiseanchor_m2CE29A9C9EE1D98C42EFC7432C3D237A89DAF94F (void);
 extern void boatcontroller__ctor_m54DA83312580BD4BB32FE67CDDB728FCFDE3DBF7 (void);
-extern void U3CdropanchorU3Ed__18__ctor_m25CCC2353E6F5A33F45F5E407901F95E21A7747B (void);
-extern void U3CdropanchorU3Ed__18_System_IDisposable_Dispose_mFFDACDBFA55CE9485E66D705B57C4F299298F7C6 (void);
-extern void U3CdropanchorU3Ed__18_MoveNext_m16CE6F2EF37EC232B289D0D2305A192B8D549C15 (void);
-extern void U3CdropanchorU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3A6365A7800A3E71316A6D57CE2CFF5FD2946CA8 (void);
-extern void U3CdropanchorU3Ed__18_System_Collections_IEnumerator_Reset_m1344FD99E1624C35CCEEE7F52D0258E724F6E02A (void);
-extern void U3CdropanchorU3Ed__18_System_Collections_IEnumerator_get_Current_m07761F4F32AEFC0E8B8D7893F012C759E22BA6F4 (void);
-extern void U3CraiseanchorU3Ed__19__ctor_mA7114B84D090D5707EF55059C77EFA0F4E7FD4FB (void);
-extern void U3CraiseanchorU3Ed__19_System_IDisposable_Dispose_m3CD365E2003F1253BDC6C0F1E9758F7D8121823B (void);
-extern void U3CraiseanchorU3Ed__19_MoveNext_mB7EDB22E9B0CD2B357E58D1D9F6B0D6134A226BA (void);
-extern void U3CraiseanchorU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8421D5522305CDD9ED3B0C52C31EE97C0F20FDE5 (void);
-extern void U3CraiseanchorU3Ed__19_System_Collections_IEnumerator_Reset_m5751870D2BF742653EE42796B9FA9C6DB17C3825 (void);
-extern void U3CraiseanchorU3Ed__19_System_Collections_IEnumerator_get_Current_m4B86526606F8CB30BEE2A2D380BB3BD168C0E0BC (void);
+extern void U3CdropanchorU3Ed__29__ctor_mC562B574D56BFD65203828062A7A6F664543439C (void);
+extern void U3CdropanchorU3Ed__29_System_IDisposable_Dispose_mF985B36462473749B611AA4692CB135463865B6B (void);
+extern void U3CdropanchorU3Ed__29_MoveNext_m3C9CF2E376B2703E12854E985E602551DEFD2CC2 (void);
+extern void U3CdropanchorU3Ed__29_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m57FE3D014BC713A1B529D81B56C4824E35697D0F (void);
+extern void U3CdropanchorU3Ed__29_System_Collections_IEnumerator_Reset_mF2BB7B807232AF855E26BEF3FD93CB7A56B14B70 (void);
+extern void U3CdropanchorU3Ed__29_System_Collections_IEnumerator_get_Current_mBFAB0475E9C3EA616E568572E3CB010914F41410 (void);
+extern void U3CraiseanchorU3Ed__30__ctor_m90CB69C8736BBEC92A5E56AD552EC22259CCE753 (void);
+extern void U3CraiseanchorU3Ed__30_System_IDisposable_Dispose_m0BAE1F3F8108B62440AB1D7C712D9D3750E9E26B (void);
+extern void U3CraiseanchorU3Ed__30_MoveNext_m5728B9BCDBFD9439840842C9AB37E08BF3CAF261 (void);
+extern void U3CraiseanchorU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m85EA73A132494DAD03635FD4B812B398CA8D50F2 (void);
+extern void U3CraiseanchorU3Ed__30_System_Collections_IEnumerator_Reset_m57F888A2D0B9A164035A779AA1F8E1440F4E0279 (void);
+extern void U3CraiseanchorU3Ed__30_System_Collections_IEnumerator_get_Current_m61E0AA6BFD70A42F26721460DD7521DC68163350 (void);
 extern void playercont_Awake_m22D44C2586255F3F0FBB1368A3CCD4B16DE857D3 (void);
 extern void playercont_Update_m76286354CAB9F1BB4AD2DB86A56492B3D3BAA325 (void);
 extern void playercont_unlock_mB174A30D44F8361088DB4E0748DE927875918515 (void);
@@ -75,18 +75,18 @@ static Il2CppMethodPointer s_methodPointers[53] =
 	boatcontroller_dropanchor_mA6C8B8257C08F1411D3BE8C08290CCF242EB99C2,
 	boatcontroller_raiseanchor_m2CE29A9C9EE1D98C42EFC7432C3D237A89DAF94F,
 	boatcontroller__ctor_m54DA83312580BD4BB32FE67CDDB728FCFDE3DBF7,
-	U3CdropanchorU3Ed__18__ctor_m25CCC2353E6F5A33F45F5E407901F95E21A7747B,
-	U3CdropanchorU3Ed__18_System_IDisposable_Dispose_mFFDACDBFA55CE9485E66D705B57C4F299298F7C6,
-	U3CdropanchorU3Ed__18_MoveNext_m16CE6F2EF37EC232B289D0D2305A192B8D549C15,
-	U3CdropanchorU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3A6365A7800A3E71316A6D57CE2CFF5FD2946CA8,
-	U3CdropanchorU3Ed__18_System_Collections_IEnumerator_Reset_m1344FD99E1624C35CCEEE7F52D0258E724F6E02A,
-	U3CdropanchorU3Ed__18_System_Collections_IEnumerator_get_Current_m07761F4F32AEFC0E8B8D7893F012C759E22BA6F4,
-	U3CraiseanchorU3Ed__19__ctor_mA7114B84D090D5707EF55059C77EFA0F4E7FD4FB,
-	U3CraiseanchorU3Ed__19_System_IDisposable_Dispose_m3CD365E2003F1253BDC6C0F1E9758F7D8121823B,
-	U3CraiseanchorU3Ed__19_MoveNext_mB7EDB22E9B0CD2B357E58D1D9F6B0D6134A226BA,
-	U3CraiseanchorU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8421D5522305CDD9ED3B0C52C31EE97C0F20FDE5,
-	U3CraiseanchorU3Ed__19_System_Collections_IEnumerator_Reset_m5751870D2BF742653EE42796B9FA9C6DB17C3825,
-	U3CraiseanchorU3Ed__19_System_Collections_IEnumerator_get_Current_m4B86526606F8CB30BEE2A2D380BB3BD168C0E0BC,
+	U3CdropanchorU3Ed__29__ctor_mC562B574D56BFD65203828062A7A6F664543439C,
+	U3CdropanchorU3Ed__29_System_IDisposable_Dispose_mF985B36462473749B611AA4692CB135463865B6B,
+	U3CdropanchorU3Ed__29_MoveNext_m3C9CF2E376B2703E12854E985E602551DEFD2CC2,
+	U3CdropanchorU3Ed__29_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m57FE3D014BC713A1B529D81B56C4824E35697D0F,
+	U3CdropanchorU3Ed__29_System_Collections_IEnumerator_Reset_mF2BB7B807232AF855E26BEF3FD93CB7A56B14B70,
+	U3CdropanchorU3Ed__29_System_Collections_IEnumerator_get_Current_mBFAB0475E9C3EA616E568572E3CB010914F41410,
+	U3CraiseanchorU3Ed__30__ctor_m90CB69C8736BBEC92A5E56AD552EC22259CCE753,
+	U3CraiseanchorU3Ed__30_System_IDisposable_Dispose_m0BAE1F3F8108B62440AB1D7C712D9D3750E9E26B,
+	U3CraiseanchorU3Ed__30_MoveNext_m5728B9BCDBFD9439840842C9AB37E08BF3CAF261,
+	U3CraiseanchorU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m85EA73A132494DAD03635FD4B812B398CA8D50F2,
+	U3CraiseanchorU3Ed__30_System_Collections_IEnumerator_Reset_m57F888A2D0B9A164035A779AA1F8E1440F4E0279,
+	U3CraiseanchorU3Ed__30_System_Collections_IEnumerator_get_Current_m61E0AA6BFD70A42F26721460DD7521DC68163350,
 	playercont_Awake_m22D44C2586255F3F0FBB1368A3CCD4B16DE857D3,
 	playercont_Update_m76286354CAB9F1BB4AD2DB86A56492B3D3BAA325,
 	playercont_unlock_mB174A30D44F8361088DB4E0748DE927875918515,
@@ -123,59 +123,59 @@ static Il2CppMethodPointer s_methodPointers[53] =
 };
 static const int32_t s_InvokerIndices[53] = 
 {
-	4479,
-	4479,
-	4479,
-	4479,
-	4479,
-	4380,
-	4380,
-	4479,
-	3579,
-	4479,
-	4305,
-	4380,
-	4479,
-	4380,
-	3579,
-	4479,
-	4305,
-	4380,
-	4479,
-	4380,
-	4479,
-	4479,
-	4479,
-	4479,
-	4380,
-	4479,
-	3579,
-	4479,
-	4305,
-	4380,
-	4479,
-	4380,
-	4479,
-	4479,
-	4479,
-	4479,
-	4479,
-	4479,
-	4380,
-	4479,
-	4479,
-	3604,
-	3604,
-	4479,
-	4479,
-	3579,
-	4479,
-	4305,
-	4380,
-	4479,
-	4380,
-	6425,
-	4479,
+	4983,
+	4983,
+	4983,
+	4983,
+	4983,
+	4883,
+	4883,
+	4983,
+	3987,
+	4983,
+	4805,
+	4883,
+	4983,
+	4883,
+	3987,
+	4983,
+	4805,
+	4883,
+	4983,
+	4883,
+	4983,
+	4983,
+	4983,
+	4983,
+	4883,
+	4983,
+	3987,
+	4983,
+	4805,
+	4883,
+	4983,
+	4883,
+	4983,
+	4983,
+	4983,
+	4983,
+	4983,
+	4983,
+	4883,
+	4983,
+	4983,
+	4013,
+	4013,
+	4983,
+	4983,
+	3987,
+	4983,
+	4805,
+	4883,
+	4983,
+	4883,
+	7171,
+	4983,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 

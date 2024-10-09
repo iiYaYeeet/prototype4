@@ -79,6 +79,7 @@
      <Folder Include="Assets\Mini Nature Pack\Models\Tree 4_Textures" />
      <Folder Include="Assets\materials\saloon-wood-floor-unity\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\materials\coarse-loose-fabric-unity" />
      <Folder Include="Assets\materials\saloon-wood-floor-unity" />
      <Folder Include="Assets\materials\fabrics_0066_1k_rbjytj" />
      <Folder Include="Assets\TextMesh Pro" />
@@ -87,6 +88,7 @@
      <Folder Include="Assets\Mini Nature Pack\Grass" />
      <Folder Include="Assets\Mini Nature Pack\Documentation" />
      <Folder Include="Assets\Mini Nature Pack\Textures" />
+     <Folder Include="Assets\materials\dull-brass-unity" />
      <Folder Include="Assets\Mini Nature Pack\Models" />
      <Folder Include="Assets\Mini Nature Pack\Scenery Textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -115,6 +117,7 @@
      <Folder Include="Assets\materials\oak-wood-bare-unity" />
      <Folder Include="Assets\materials\older-wood-flooring-unity\Materials" />
      <Folder Include="Assets\Mini Nature Pack\Models\Tree 6_Textures" />
+     <Folder Include="Assets\materials\streaky-metal1-unity" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Mini Nature Pack\Materials" />
      <Folder Include="Assets\materials\spotted-rust-unity" />
